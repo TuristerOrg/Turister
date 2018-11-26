@@ -1,8 +1,7 @@
-
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-let pos
+    let pos;
     var map, infoWindow;
     function initMap() {
       map = new google.maps.Map(document.getElementById("map"), {
@@ -10,8 +9,9 @@ let pos
       });
 
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-             pos = {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
@@ -23,7 +23,7 @@ let pos
               icon: {
                 path: google.maps.SymbolPath.CIRCLE,
                 scale: 10
-              },
+              }
             });
             map.setCenter(pos);
           },
@@ -33,9 +33,25 @@ let pos
         );
       } else {
         handleLocationError(false, infoWindow, map.getCenter());
-      }  
+      }
+
+      const printInfoMarkers = () => {
+        info.forEach(item => {
+          console.log(item.location.latitude);
+          marker = new google.maps.Marker({
+            position: {
+              lat: item.location.latitude,
+              lng: item.location.longitude
+            },
+            map
+          });
+        });
+      };
+
+      printInfoMarkers();
 
     }
+
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       infoWindow.setPosition(pos);
@@ -46,9 +62,6 @@ let pos
       );
       infoWindow.open(map);
     }
-
- 
-
 
     initMap();
   },
