@@ -1,0 +1,19 @@
+<div class="full-container">
+
+  <h2>Log in</h2>
+
+  <form action="/auth/login" method="POST" id="form-container">
+    <input id="username" type="text" name="username" placeholder="Escribe tu usuario">
+    <input id="password" type="password" name="password" placeholder="Escribe tu contraseña">
+   
+    {{#if message }}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+   
+    <button id="login-btn">Login</button>
+    <p class="account-message">
+      Si todavía no tienes cuenta
+      <a href="/auth/signup">Sign up</a>
+    </p>
+  </form>
+</div>
