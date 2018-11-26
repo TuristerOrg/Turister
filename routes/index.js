@@ -14,8 +14,9 @@ router.get("/addplace", (req, res, next) => {
 router.post('/addplace', (req, res, next) => {
 
   let currentPlace = {
-    name: req.body.name,
-    description: req.body.description,
+    name: req.body.placename,
+    description: req.body.placedescription,
+    type: req.body.placetype,
     location: {
       type: 'Point',
       coordinates: [Number(req.body.latitude), Number(req.body.longitude)]

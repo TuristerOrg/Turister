@@ -118,4 +118,9 @@ a {
   color: #e6e6e6;
   background-color: black; }
 
+#radioAddPlace {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
 /*# sourceMappingURL=style.css.map */
