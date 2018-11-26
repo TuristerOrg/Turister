@@ -7,10 +7,6 @@ document.addEventListener(
       zoom: 18,
     });
 
-    geolocalize().then(center => {
-      mapAddPlaces.setCenter(center);
-    });
-
     const setPosOnForm = (latlng) => {
       document.getElementById('lat-pos').value = latlng.lat;
       document.getElementById('lng-pos').value = latlng.lng;
@@ -28,7 +24,8 @@ document.addEventListener(
       setPosOnForm(clickPos)
     });
   
-    geolocalize().then(center => {
+    geolocalize()
+    .then(center => {
       mapAddPlaces.setCenter(center);
       marker = new google.maps.Marker({
         position: center,
