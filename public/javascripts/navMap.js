@@ -33,7 +33,8 @@ let pos
         );
       } else {
         handleLocationError(false, infoWindow, map.getCenter());
-      }
+      }  
+
     }
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -45,6 +46,9 @@ let pos
       );
       infoWindow.open(map);
     }
+
+ 
+
 
     initMap();
   },

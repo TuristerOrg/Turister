@@ -1,10 +1,21 @@
 const express = require('express');
 const passport = require('passport');
+const axios = require('axios')
 const router  = express.Router();
 const Place = require("../models/Place")
 /* GET home page */
+
+
 router.get('/', (req, res, next) => {
-  res.render('index');
+  axios.get('https://datos.madrid.es/egob/catalogo/201105-0-informacion-turismo.json')
+      .then(response => {
+        console.log(response.data['@graph']);
+        res.render('index', {response : JSON.stringify(response.data['@graph'])});
+      })
+      .catch(errGetAPI => {
+        console.log(errGetAPI);
+      });
+ 
 });
 
 router.get("/addplace", (req, res, next) => {
@@ -27,5 +38,7 @@ router.post('/addplace', (req, res, next) => {
     res.redirect('/');
   }).catch(e=> next(e));
 });
+
+
 
 module.exports = router;
