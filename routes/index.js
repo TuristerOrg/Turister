@@ -6,10 +6,7 @@ const router  = express.Router();
 const Place = require('../models/Place');
 
 router.get('/', (req, res, next) => {
-  console.log('here 2');
-  Place.find().then((place) => {
-    console.log(place);
-
+  Place.find({}).then((place) => {
     res.render('index', { places : JSON.stringify(place) });
   });
 });
@@ -27,7 +24,6 @@ router.post('/addplace', (req, res, next) => {
       coordinates: [Number(req.body.latitude), Number(req.body.longitude)],
     },
   };
-  console.log(currentPlace);
   Place.create(currentPlace).then((currentPlace) => {
     res.redirect('/');
   }).catch(e => next(e));
