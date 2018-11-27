@@ -15,6 +15,7 @@
 
   <nav>
     <div id="nav-bar">
+      <img id="filter-btn" src="/images/arrow.png" alt="filter-icon">
       <h1>Turister</h1>
       <img id="menu-btn" src="/images/menu-icon-2.png" alt="menu-icon">
     </div>
@@ -27,6 +28,18 @@
       <div class="menu-box"><a href="/auth/login">Log in</a></div>
       <div class="menu-box"><a href="/auth/signup">Sign up</a></div>
     </div>
+
+    <div id="filter-container">
+      <form action="/" method="POST" id="form-filter">
+      <label><input name="type" type="checkbox" id="todo" value="todos">Todos</label>
+      <label><input name="monumento" type="checkbox" id="monumento" value="monumento">Monumentos</label>
+      <label><input name="museo" type="checkbox" id="museo" value="museo">Museos</label>
+      <label><input name="informacion" type="checkbox" id="informacion" value="informacion">Información</label>
+      <label><input name="iglesia" type="checkbox" id="iglesia" value="iglesia">Iglesias</label>
+      <button type="submit" >Filtra</button>
+      </form>
+    </div>
+
   </nav>
 
   {{{body}}}
