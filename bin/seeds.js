@@ -43,7 +43,7 @@ const petitionAJAX = (url, tipo) => {
       
       return Promise.all(response.data["@graph"].map(element => {
         if (element.location != undefined) {
-          let currentMonument = {
+          let currentPlaces = {
             name: element.title,
             description: element.organization["organization-desc"],
             type: tipo,
@@ -55,7 +55,8 @@ const petitionAJAX = (url, tipo) => {
               ]
             }
           };
-          return Place.create(currentMonument).catch(e =>
+          return Place.create(currentPlaces)
+          .catch(e =>
             console.log(`Error in element${element.name}`, e)
           );
         } else {
