@@ -1,3 +1,6 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-use-before-define */
+/* eslint-disable prefer-destructuring */
 const express = require('express');
 const passport = require('passport');
 
@@ -60,5 +63,6 @@ router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
 });
+
 
 module.exports = router;

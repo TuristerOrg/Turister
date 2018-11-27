@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable eqeqeq */
 // Seeds file that remove all users and create 2 new users
 
 // To execute this seed, run from the root of the project
@@ -39,7 +41,7 @@ const users = [
 
 const petitionAJAX = (url, tipo) => axios
   .get(url)
-  .then(response => Promise.all(response.data['@graph'].map((element) => {
+  .then(response => Promise.all(response.data['@graph'].map(async (element) => {
     if (element.location != undefined) {
       const currentMonument = {
         name: element.title,
@@ -53,7 +55,11 @@ const petitionAJAX = (url, tipo) => axios
           ],
         },
       };
-      return Place.create(currentMonument).catch(e => console.log(`Error in element${element.name}`, e));
+      try {
+        return Place.create(currentMonument);
+      } catch (e) {
+        return console.log(`Error in element${element.name}`, e);
+      }
     }
   })))
   .catch((errGetAPI) => {

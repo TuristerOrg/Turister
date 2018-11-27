@@ -1,10 +1,13 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
+/* eslint-disable consistent-return */
 const express = require('express');
 const passport = require('passport');
 const axios = require('axios');
 
 const router = express.Router();
 const Place = require('../models/Place');
-/* GET home page */
 
 router.get('/', (req, res, next) => {
   //   let petition = new Promise ((resolve, rej)=>{

@@ -81,5 +81,8 @@ const authRoutes = require('./routes/auth');
 
 app.use('/auth', authRoutes);
 
+const adminRoutes = require('./routes/admin');
+
+app.use('/admin', adminRoutes);
 
 module.exports = app;
