@@ -37,11 +37,11 @@ document.addEventListener(
 
       const printInfoMarkers = () => {
         info.forEach(item => {
-          console.log(item.location.latitude);
+          console.log(item);
           marker = new google.maps.Marker({
             position: {
-              lat: item.location.latitude,
-              lng: item.location.longitude
+              lat: item.location.coordinates[0],
+              lng: item.location.coordinates[1]
             },
             map
           });
