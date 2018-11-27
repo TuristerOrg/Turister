@@ -10,6 +10,7 @@ const Place = require("../models/Place");
 const axios = require("axios");
 const bcryptSalt = 10;
 
+
 mongoose
   .connect(
     "mongodb://localhost/proyecto-2",
