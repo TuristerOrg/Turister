@@ -4,7 +4,7 @@ const Schema   = mongoose.Schema;
 
 const placeSchema = new Schema({
   name: String,
-  descripton: String,
+  description: String,
   type: { type: String, enum: ['museo', 'monumento', 'iglesia', 'informacion'] },
   location: {
     type: { type: String },

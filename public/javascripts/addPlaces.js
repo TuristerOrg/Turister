@@ -1,6 +1,7 @@
 document.addEventListener(
   'DOMContentLoaded',
   () => {
+<<<<<<< HEAD
     const mapAddPlaces = new google.maps.Map(document.getElementById('mapAddPlaces'), {
       zoom: 18,
     });
@@ -9,6 +10,14 @@ document.addEventListener(
       mapAddPlaces.setCenter(center);
     });
 
+=======
+
+  
+    let mapAddPlaces = new google.maps.Map(document.getElementById('mapAddPlaces'), {
+      zoom: 18,
+    });
+
+>>>>>>> e5c39dd7b70cdc5afec5e9602266575e43f2f3fd
     const setPosOnForm = (latlng) => {
       document.getElementById('lat-pos').value = latlng.lat;
       document.getElementById('lng-pos').value = latlng.lng;
@@ -25,8 +34,14 @@ document.addEventListener(
       marker.setPosition(clickPos);
       setPosOnForm(clickPos);
     });
+<<<<<<< HEAD
 
     geolocalize().then((center) => {
+=======
+  
+    geolocalize()
+    .then(center => {
+>>>>>>> e5c39dd7b70cdc5afec5e9602266575e43f2f3fd
       mapAddPlaces.setCenter(center);
       setPosOnForm(center);
     });
