@@ -45,11 +45,13 @@ const petitionAJAX = (url, tipo) => {
     .then(response => {
       
       return Promise.all(response.data["@graph"].map(element => {
+        console.log(element)
         if (element.location != undefined) {
           let currentPlaces = {
             name: element.title,
             description: element.organization["organization-desc"],
             type: tipo,
+            web:element.relation,
             location: {
               type: "Point",
               coordinates: [
