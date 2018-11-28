@@ -73,8 +73,11 @@ document.addEventListener(
                 <div>
                   <p>${item.description}</p>
                   <a id="visitarweb" href="${item.web}" target='_blank'>Visitar web</a>
+                  <audio controls>
+                    <source src="${item.audio}" type="audio/mpeg">
+                  </audio>"
                 </div>
-              </div>`,
+              </div>`
               );
 
               // infoWindow.setOptions({maxWidt: 200})
