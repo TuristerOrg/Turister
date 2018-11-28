@@ -20,15 +20,25 @@ document.addEventListener(
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             };
-            marker = new google.maps.Marker({
+            const marker = new google.maps.Marker({
               map,
               draggable: true,
               animation: google.maps.Animation.DROP,
               position: pos,
               icon: {
                 path: google.maps.SymbolPath.CIRCLE,
-                scale: 10,
+                scale: 8,
               },
+            });
+            const circle = new google.maps.Circle({
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.35,
+              map,
+              center: pos,
+              radius:  80,
             });
             map.setCenter(pos);
           },
@@ -44,34 +54,34 @@ document.addEventListener(
         info.forEach((item) => {
           console.log(item);
 
-          var infowindow = new google.maps.InfoWindow();
+          const infowindow = new google.maps.InfoWindow();
 
           marker = new google.maps.Marker({
             position: {
               lat: item.location.coordinates[0],
               lng: item.location.coordinates[1],
             },
-            map: map,
-            title: item.name
+            map,
+            title: item.name,
           });
 
-          google.maps.event.addListener(marker,'click', (function(marker) {
-            return function(){
+          google.maps.event.addListener(marker, 'click', (function (marker) {
+            return function () {
               infowindow.setContent(
-              `<div>
+                `<div>
                 <h2>${item.name}</h2>
                 <div>
                   <p>${item.description}</p>
                   <a id="visitarweb" href="${item.web}" target='_blank'>Visitar web</a>
                 </div>
-              </div>`);
+              </div>`,
+              );
 
               // infoWindow.setOptions({maxWidt: 200})
               // pixelOffset: new google.maps.Size(0, 60)
               infowindow.open(map, marker);
-            }
-          })(marker));
-
+            };
+          }(marker)));
         });
       };
 
