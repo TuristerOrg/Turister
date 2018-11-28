@@ -1,11 +1,11 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
 
 const bcryptSalt = 10;
 
-const dbName = 'proyecto-2';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect(rocess.env.DBURL);
 
 function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
