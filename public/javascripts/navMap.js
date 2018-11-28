@@ -62,7 +62,7 @@ document.addEventListener(
                 <h2>${item.name}</h2>
                 <div>
                   <p>${item.description}</p>
-                  <a id="visitarweb" href="${item.web}">Visitar web</a>
+                  <a id="visitarweb" href="${item.web}" target='_blank'>Visitar web</a>
                 </div>
               </div>`);
 
