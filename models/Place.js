@@ -7,6 +7,7 @@ const placeSchema = new Schema({
   description: String,
   type: { type: String, enum: ['museo', 'monumento', 'iglesia', 'informacion'] },
   web: String,
+  audio:{type: String, default: ""},
   location: {
     type: { type: String },
     coordinates: [Number],
