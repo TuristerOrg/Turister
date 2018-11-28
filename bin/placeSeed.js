@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const Place = require('../models/Place');
 
-const dbName = 'proyecto-2';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect(rocess.env.DBURL);
 
 function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);

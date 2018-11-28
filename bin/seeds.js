@@ -1,3 +1,4 @@
+require('dotenv').config();
 /* eslint-disable consistent-return */
 /* eslint-disable eqeqeq */
 // Seeds file that remove all users and create 2 new users
@@ -16,7 +17,7 @@ const bcryptSalt = 10;
 
 mongoose
   .connect(
-    'mongodb://localhost/proyecto-2',
+    rocess.env.DBURL,
     { useNewUrlParser: true },
   )
   .then((x) => {
@@ -39,40 +40,31 @@ const users = [
   },
 ];
 
-const petitionAJAX = (url, tipo) => {
-  return axios
-    .get(url)
-    .then(response => {
-      
-      return Promise.all(response.data["@graph"].map(element => {
-        console.log(element)
-        if (element.location != undefined) {
-          let currentPlaces = {
-            name: element.title,
-            description: element.organization["organization-desc"],
-            type: tipo,
-            web:element.relation,
-            location: {
-              type: "Point",
-              coordinates: [
-                Number(element.location.latitude),
-                Number(element.location.longitude)
-              ]
-            }
-          };
-          return Place.create(currentPlaces)
-          .catch(e =>
-            console.log(`Error in element${element.name}`, e)
-          );
-        } else {
-          return;
-        }
-      }));
-    })
-    .catch(errGetAPI => {
-      console.log(errGetAPI);
-    });
-};
+const petitionAJAX = (url, tipo) => axios
+  .get(url)
+  .then(response => Promise.all(response.data['@graph'].map((element) => {
+    console.log(element);
+    if (element.location != undefined) {
+      const currentPlaces = {
+        name: element.title,
+        description: element.organization['organization-desc'],
+        type: tipo,
+        web:element.relation,
+        location: {
+          type: 'Point',
+          coordinates: [
+            Number(element.location.latitude),
+            Number(element.location.longitude),
+          ],
+        },
+      };
+      return Place.create(currentPlaces)
+        .catch(e => console.log(`Error in element${element.name}`, e));
+    }
+  })))
+  .catch((errGetAPI) => {
+    console.log(errGetAPI);
+  });
 
 
 User.deleteMany()

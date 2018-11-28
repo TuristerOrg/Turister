@@ -166,6 +166,88 @@ a {
   flex-direction: column;
   justify-content: space-around;
 }
-#visitarweb{
+#visitarweb {
   color: rgb(66, 150, 206);
+}
+
+.btn {
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  margin: 10px 7px 11px 0;
+  padding: 0 20px;
+  text-align: center;
+
+  /* Smoothing out hover using css3 transitions, if not, the pressed button effect looks a bit hard */
+  transition: all 0.2s ease;
+
+  /* Size */
+  line-height: 45px;
+  width: 20%;
+  height: 45px;
+  font-size: 120%;
+
+  /* Colors */
+  background: #f7f7f7;
+  box-shadow: 0 6px rgba(0, 0, 0, 0.2);
+  color: #888;
+}
+
+.btn:hover {
+  background: #e6e6e6;
+  box-shadow: 0 5px #aaa;
+  color: #888;
+}
+
+/* Imitate a pressed effect for buttons */
+.btn:active {
+  top: 5px;
+  box-shadow: none;
+}
+
+.btn-del {
+  background: #e8103b;
+  box-shadow: 0 6px #890923;
+  color: #fff;
+}
+
+.btn-del:hover {
+  background: #c80e33;
+  box-shadow: 0 5px #69071b;
+  color: #fff;
+}
+
+.adminPanel {
+  height: 90vh;
+  padding-left: 20px;
+  & h1 {
+    margin: 0;
+    padding-top: 20px;
+    font-size: 30px;
+    color: rgb(230, 230, 230);
+  }
+}
+.deleteUser {
+  & h3 {
+    
+    padding-top: 20px;
+    margin: 0;
+    font-size: 30px;
+    color: rgb(230, 230, 230);
+  }
+}
+.deleteLocation {
+  & h3 {
+    padding-top: 20px;
+    margin: 0;
+    font-size: 30px;
+    color: rgb(230, 230, 230);
+  }
+}
+
+.dangerImg{
+  width: 30px;
+  height: auto;
 }

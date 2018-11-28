@@ -1,6 +1,7 @@
-<h3>Delete user</h3>
-<form method="POST" action="/admin/deleteUser">
-  <label>Username:</label>
-  <input type="text" name="username" placeholder="Username">
-  <button type="submit" id="submit">Delete</button>
-</form>
+<div class="adminPanel deleteUser">
+  <h3>Delete user <img class="dangerImg" src="https://vignette.wikia.nocookie.net/kavra/images/b/b1/Danger_sign_from_wikipedia.png/revision/latest/scale-to-width-down/547?cb=20180202212727" alt="Danger Sign"></h3>
+  <form method="POST" action="/admin/deleteUser">
+    <input type="text" name="username" placeholder="Username"><br>
+    <button class="btn btn-del" type="submit" id="submit">Delete User</button>
+  </form>
+</div>
