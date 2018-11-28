@@ -58,5 +58,4 @@ router.post('/addplace', (req, res, next) => {
 });
 
 
-
 module.exports = router;
