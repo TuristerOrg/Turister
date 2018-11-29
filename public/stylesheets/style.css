@@ -127,19 +127,42 @@ a {
   align-items: center; }
 
 #filter-container {
-  display: none;
+  z-index: 1;
   position: absolute;
-  justify-content: center;
+  display: none; }
+
+#filter-container form {
+  flex-direction: column;
+  justify-content: space-around; }
+
+.filter-box {
+  display: flex;
+  position: relative;
+  padding-left: 5vw;
   align-items: center;
   width: 50.1vw;
   height: 10vh;
   background-color: rgba(123, 172, 224, 0.95);
   border-bottom: 1px solid #e6e6e6; }
 
-#filter-container form {
+.filter-box-btn {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around; }
+  position: relative;
+  align-items: center;
+  width: 50.1vw;
+  height: 10vh; }
+
+.btn-filtro {
+  width: 100%;
+  height: 100%;
+  color: #e6e6e6;
+  background-color: rgba(233, 141, 88, 0.95); }
+
+#routesBtn {
+  background-color: rgba(165, 176, 118, 0.95); }
+
+.filter-box label {
+  color: #e6e6e6; }
 
 #visitarweb {
   color: #4296ce; }
@@ -184,9 +207,6 @@ a {
   background: #c80e33;
   box-shadow: 0 5px #69071b;
   color: #fff; }
-
-.btn-filtro {
-  width: 80%; }
 
 .adminPanel {
   height: 90vh;

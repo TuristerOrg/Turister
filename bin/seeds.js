@@ -17,7 +17,7 @@ const bcryptSalt = 10;
 
 mongoose
   .connect(
-    rocess.env.DBURL,
+    process.env.DBURL,
     { useNewUrlParser: true },
   )
   .then((x) => {

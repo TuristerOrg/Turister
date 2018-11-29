@@ -5,7 +5,7 @@ const User = require('../models/User');
 
 const bcryptSalt = 10;
 
-mongoose.connect(rocess.env.DBURL);
+mongoose.connect(process.env.DBURL);
 
 function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);

@@ -10,7 +10,7 @@ const router = express.Router();
 const Place = require('../models/Place');
 
 
-router.get('/', (req, res, next) => {
+router.get("/", (req, res, next) => {
   if (!req.user) {
     Place.find({}).then((response) => {
       res.render('index', { response: JSON.stringify(response) });
@@ -18,15 +18,26 @@ router.get('/', (req, res, next) => {
       .catch((errGetAPI) => {
         console.log(errGetAPI);
       });
-  }
-  if (req.user) {
-    Place.find({}).then((response) => {
-      res.render('index', { response: JSON.stringify(response), userName:req.user.username, userAdmin: req.user.admin });
-    })
-      .catch((errGetAPI) => {
+    }
+    if (req.user) {
+      Place.find({}).then((response) => {
+        res.render('index', { response: JSON.stringify(response), userName:req.user.username, userAdmin: req.user.admin });
+      })
+        .catch((errGetAPI) => {
+          console.log(errGetAPI);
+        });
+    }
+});
+
+router.post("/", (req, res, next) => {
+
+    Place.find({ $or: [ { type:req.body.informacion}, { type:req.body.iglesia },{ type:req.body.monumento}, { type:req.body.museo }] })
+      .then(response => {
+        res.render("index", {response: JSON.stringify(response)})
+        })
+      .catch(errGetAPI => {
         console.log(errGetAPI);
       });
-  }
 });
 
 router.get('/addplace', (req, res, next) => {
@@ -51,13 +62,5 @@ router.post('/addplace', (req, res, next) => {
     .catch(e => next(e));
 });
 
-router.get('/:user', (req, res, next) => {
-  User.findOne({ confirmationCode : req.params.confirmationCode }, { $set: { status: 'active' } })
-    .then((user) => {
-      console.log('success');
-      res.render('auth/confirmation', { user });
-    })
-    .catch(err => next(err));
-});
 
 module.exports = router;
