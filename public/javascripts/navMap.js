@@ -248,7 +248,9 @@ document.addEventListener(
       });
 
       directionsDisplay.setMap(map);
-      calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+      function btn() { document.getElementById('routesBtn').onclick = () => calculateAndDisplayRoute(directionsService, directionsDisplay); }
+      btn();
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         directionsService.route(

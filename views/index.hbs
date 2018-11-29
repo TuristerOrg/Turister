@@ -1,2 +1,5 @@
 <div id="map"></div>
+{{#if userAdmin}}
+<div><button class="btn btn-del admin-btn" onclick="location.href = '/admin/controlPanel'">Admin Panel</button></div>
+{{/if}}
 <script>window.info = {{{ response }}}</script>
