@@ -11,13 +11,22 @@ const Place = require('../models/Place');
 
 
 router.get("/", (req, res, next) => {
-  
-    Place.find({}).then(response => {
-        res.render("index", {response: JSON.stringify(response)})
-        })
-      .catch(errGetAPI => {
+  if (!req.user) {
+    Place.find({}).then((response) => {
+      res.render('index', { response: JSON.stringify(response) });
+    })
+      .catch((errGetAPI) => {
         console.log(errGetAPI);
       });
+    }
+    if (req.user) {
+      Place.find({}).then((response) => {
+        res.render('index', { response: JSON.stringify(response), userName:req.user.username, userAdmin: req.user.admin });
+      })
+        .catch((errGetAPI) => {
+          console.log(errGetAPI);
+        });
+    }
 });
 
 router.post("/", (req, res, next) => {

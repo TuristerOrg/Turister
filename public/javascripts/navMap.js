@@ -2,252 +2,255 @@
 /* eslint-disable no-use-before-define */
 
 document.addEventListener(
-  "DOMContentLoaded",
+  'DOMContentLoaded',
   () => {
     const radius = 80;
     let pos;
     let map;
     let infoWindow;
 
-     let customeIcons = {
+    const customeIcons = {
       monumento: {
-        icon: '../images/column.png'
+        icon: '../images/column.png',
       },
       iglesia: {
-        icon: '../images/church.png'
+        icon: '../images/church.png',
       },
       informacion: {
-        icon: '../images/information-symbol.png'
+        icon: '../images/information-symbol.png',
       },
       museo: {
-        icon: '../images/library.png'
-      }
+        icon: '../images/library.png',
+      },
     };
 
     function initMap() {
-      var directionsDisplay = new google.maps.DirectionsRenderer();
-      var directionsService = new google.maps.DirectionsService();
+      const directionsDisplay = new google.maps.DirectionsRenderer();
+      const directionsService = new google.maps.DirectionsService();
 
-      map = new google.maps.Map(document.getElementById("map"), {
+      map = new google.maps.Map(document.getElementById('map'), {
         zoom: 16,
         styles: [
           {
-            "elementType": "geometry",
-            "stylers": [
+            elementType: 'geometry',
+            stylers: [
               {
-                "color": "#ebe3cd"
-              }
-            ]
+                color: '#ebe3cd',
+              },
+            ],
           },
           {
-            "elementType": "labels.text.fill",
-            "stylers": [
+            elementType: 'labels.text.fill',
+            stylers: [
               {
-                "color": "#523735"
-              }
-            ]
+                color: '#523735',
+              },
+            ],
           },
           {
-            "elementType": "labels.text.stroke",
-            "stylers": [
+            elementType: 'labels.text.stroke',
+            stylers: [
               {
-                "color": "#f5f1e6"
-              }
-            ]
+                color: '#f5f1e6',
+              },
+            ],
           },
           {
-            "featureType": "administrative",
-            "elementType": "geometry.stroke",
-            "stylers": [
+            featureType: 'administrative',
+            elementType: 'geometry.stroke',
+            stylers: [
               {
-                "color": "#c9b2a6"
-              }
-            ]
+                color: '#c9b2a6',
+              },
+            ],
           },
           {
-            "featureType": "administrative.land_parcel",
-            "elementType": "geometry.stroke",
-            "stylers": [
+            featureType: 'administrative.land_parcel',
+            elementType: 'geometry.stroke',
+            stylers: [
               {
-                "color": "#dcd2be"
-              }
-            ]
+                color: '#dcd2be',
+              },
+            ],
           },
           {
-            "featureType": "administrative.land_parcel",
-            "elementType": "labels.text.fill",
-            "stylers": [
+            featureType: 'administrative.land_parcel',
+            elementType: 'labels.text.fill',
+            stylers: [
               {
-                "color": "#ae9e90"
-              }
-            ]
+                color: '#ae9e90',
+              },
+            ],
           },
           {
-            "featureType": "landscape.natural",
-            "elementType": "geometry",
-            "stylers": [
+            featureType: 'landscape.natural',
+            elementType: 'geometry',
+            stylers: [
               {
-                "color": "#dfd2ae"
-              }
-            ]
+                color: '#dfd2ae',
+              },
+            ],
           },
           {
-            "featureType": "poi",
-            "elementType": "geometry",
-            "stylers": [
+            featureType: 'poi',
+            elementType: 'geometry',
+            stylers: [
               {
-                "color": "#dfd2ae"
-              }
-            ]
+                color: '#dfd2ae',
+              },
+            ],
           },
           {
-            "featureType": "poi",
-            "elementType": "labels.text.fill",
-            "stylers": [
+            featureType: 'poi',
+            elementType: 'labels.text.fill',
+            stylers: [
               {
-                "color": "#93817c"
-              }
-            ]
+                color: '#93817c',
+              },
+            ],
           },
           {
-            "featureType": "poi.park",
-            "elementType": "geometry.fill",
-            "stylers": [
+            featureType: 'poi.park',
+            elementType: 'geometry.fill',
+            stylers: [
               {
-                "color": "#a5b076"
-              }
-            ]
+                color: '#a5b076',
+              },
+            ],
           },
           {
-            "featureType": "poi.park",
-            "elementType": "labels.text.fill",
-            "stylers": [
+            featureType: 'poi.park',
+            elementType: 'labels.text.fill',
+            stylers: [
               {
-                "color": "#447530"
-              }
-            ]
+                color: '#447530',
+              },
+            ],
           },
           {
-            "featureType": "road",
-            "elementType": "geometry",
-            "stylers": [
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [
               {
-                "color": "#f5f1e6"
-              }
-            ]
+                color: '#f5f1e6',
+              },
+            ],
           },
           {
-            "featureType": "road.arterial",
-            "elementType": "geometry",
-            "stylers": [
+            featureType: 'road.arterial',
+            elementType: 'geometry',
+            stylers: [
               {
-                "color": "#fdfcf8"
-              }
-            ]
+                color: '#fdfcf8',
+              },
+            ],
           },
           {
-            "featureType": "road.highway",
-            "elementType": "geometry",
-            "stylers": [
+            featureType: 'road.highway',
+            elementType: 'geometry',
+            stylers: [
               {
-                "color": "#f8c967"
-              }
-            ]
+                color: '#f8c967',
+              },
+            ],
           },
           {
-            "featureType": "road.highway",
-            "elementType": "geometry.stroke",
-            "stylers": [
+            featureType: 'road.highway',
+            elementType: 'geometry.stroke',
+            stylers: [
               {
-                "color": "#e9bc62"
-              }
-            ]
+                color: '#e9bc62',
+              },
+            ],
           },
           {
-            "featureType": "road.highway.controlled_access",
-            "elementType": "geometry",
-            "stylers": [
+            featureType: 'road.highway.controlled_access',
+            elementType: 'geometry',
+            stylers: [
               {
-                "color": "#e98d58"
-              }
-            ]
+                color: '#e98d58',
+              },
+            ],
           },
           {
-            "featureType": "road.highway.controlled_access",
-            "elementType": "geometry.stroke",
-            "stylers": [
+            featureType: 'road.highway.controlled_access',
+            elementType: 'geometry.stroke',
+            stylers: [
               {
-                "color": "#db8555"
-              }
-            ]
+                color: '#db8555',
+              },
+            ],
           },
           {
-            "featureType": "road.local",
-            "elementType": "labels.text.fill",
-            "stylers": [
+            featureType: 'road.local',
+            elementType: 'labels.text.fill',
+            stylers: [
               {
-                "color": "#806b63"
-              }
-            ]
+                color: '#806b63',
+              },
+            ],
           },
           {
-            "featureType": "transit.line",
-            "elementType": "geometry",
-            "stylers": [
+            featureType: 'transit.line',
+            elementType: 'geometry',
+            stylers: [
               {
-                "color": "#dfd2ae"
-              }
-            ]
+                color: '#dfd2ae',
+              },
+            ],
           },
           {
-            "featureType": "transit.line",
-            "elementType": "labels.text.fill",
-            "stylers": [
+            featureType: 'transit.line',
+            elementType: 'labels.text.fill',
+            stylers: [
               {
-                "color": "#8f7d77"
-              }
-            ]
+                color: '#8f7d77',
+              },
+            ],
           },
           {
-            "featureType": "transit.line",
-            "elementType": "labels.text.stroke",
-            "stylers": [
+            featureType: 'transit.line',
+            elementType: 'labels.text.stroke',
+            stylers: [
               {
-                "color": "#ebe3cd"
-              }
-            ]
+                color: '#ebe3cd',
+              },
+            ],
           },
           {
-            "featureType": "transit.station",
-            "elementType": "geometry",
-            "stylers": [
+            featureType: 'transit.station',
+            elementType: 'geometry',
+            stylers: [
               {
-                "color": "#dfd2ae"
-              }
-            ]
+                color: '#dfd2ae',
+              },
+            ],
           },
           {
-            "featureType": "water",
-            "elementType": "geometry.fill",
-            "stylers": [
+            featureType: 'water',
+            elementType: 'geometry.fill',
+            stylers: [
               {
-                "color": "#b9d3c2"
-              }
-            ]
+                color: '#b9d3c2',
+              },
+            ],
           },
           {
-            "featureType": "water",
-            "elementType": "labels.text.fill",
-            "stylers": [
+            featureType: 'water',
+            elementType: 'labels.text.fill',
+            stylers: [
               {
-                "color": "#92998d"
-              }
-            ]
-          }
-        ]      });
+                color: '#92998d',
+              },
+            ],
+          },
+        ],
+      });
 
       directionsDisplay.setMap(map);
-      calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+      function btn() { document.getElementById('routesBtn').onclick = () => calculateAndDisplayRoute(directionsService, directionsDisplay); }
+      btn();
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         directionsService.route(
@@ -258,59 +261,59 @@ document.addEventListener(
               {
                 location: new google.maps.LatLng(
                   40.415547923977506,
-                  -3.713669638684312
+                  -3.713669638684312,
                 ),
-                stopover: true
+                stopover: true,
               },
               {
                 location: new google.maps.LatLng(
                   40.42425096551599,
-                  -3.716531855540272
+                  -3.716531855540272,
                 ),
-                stopover: true
+                stopover: true,
               },
               {
                 location: new google.maps.LatLng(
                   40.41974735763767,
-                  -3.7061346665078845
+                  -3.7061346665078845,
                 ),
-                stopover: true
-              }
+                stopover: true,
+              },
             ],
-            travelMode: google.maps.TravelMode["WALKING"]
+            travelMode: google.maps.TravelMode.WALKING,
           },
-          function(response, status) {
-            if (status == "OK") {
+          (response, status) => {
+            if (status == 'OK') {
               directionsDisplay.setDirections(response);
             } else {
-              window.alert("Directions request failed due to " + status);
+              window.alert(`Directions request failed due to ${status}`);
             }
-          }
+          },
         );
       }
 
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-          position => {
+          (position) => {
             pos = {
               lat: position.coords.latitude,
-              lng: position.coords.longitude
+              lng: position.coords.longitude,
             };
-            const markerID = new google.maps.Marker({
-              map: map,
+            const marker = new google.maps.Marker({
+              map,
               draggable: true,
               animation: google.maps.Animation.DROP,
               position: pos,
               icon: {
                 path: google.maps.SymbolPath.CIRCLE,
-                scale: 5
-              }
+                scale: 5,
+              },
             });
             const circle = new google.maps.Circle({
-              strokeColor: "#FF0000",
+              strokeColor: '#FF0000',
               strokeOpacity: 0.8,
               strokeWeight: 2,
-              fillColor: "#FF0000",
+              fillColor: '#FF0000',
               fillOpacity: 0.35,
               map,
               center: pos,
@@ -320,7 +323,7 @@ document.addEventListener(
           },
           () => {
             handleLocationError(true, infoWindow, map.getCenter());
-          }
+          },
         );
       } else {
         handleLocationError(false, infoWindow, map.getCenter());
@@ -373,8 +376,8 @@ document.addEventListener(
                 <div>
                   <p>${item.description}</p>
                   <a id="visitarweb" href="${
-                    item.web
-                  }" target='_blank'>Visitar web</a>
+                item.web
+                }" target='_blank'>Visitar web</a>
                   <audio controls>
                     <source src="${item.audio}" type="audio/mpeg">
                   </audio>"
@@ -398,13 +401,13 @@ document.addEventListener(
       infoWindow.setPosition(pos);
       infoWindow.setContent(
         browserHasGeolocation
-          ? "Error: The Geolocation service failed."
-          : "Error: Your browser doesn't support geolocation."
+          ? 'Error: The Geolocation service failed.'
+          : "Error: Your browser doesn't support geolocation.",
       );
       infoWindow.open(map);
     }
 
     initMap();
   },
-  false
+  false,
 );
