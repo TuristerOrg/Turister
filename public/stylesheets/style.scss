@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans SC', sans-serif;
-  background-color: #7bace0;
+  background-color: rgb(103, 157, 248);
   
 
 }
@@ -24,8 +24,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #7bace0;
-  border-bottom: 2px solid #E98D58;
+  background-color: rgb(103, 157, 248);
+  border-bottom: 2px solid rgb(233, 141, 88);
 }
 
 h1 {
@@ -54,7 +54,7 @@ nav img {
   align-items: center;
   width: 50.1vw;
   height: 10vh;
-  background-color: rgba(123, 172, 224, 0.95);
+  background-color: rgba(103, 157, 248, 0.95);
   border-bottom: 1px solid rgb(230, 230, 230);
 }
 
@@ -155,7 +155,7 @@ a {
   display: none;
 }
 
-#filter-container form {
+#form-filter-container {
   flex-direction: column;
   justify-content: space-around;
 }
@@ -167,7 +167,7 @@ a {
   align-items: center;
   width: 50.1vw;
   height: 10vh;
-  background-color: rgba(123, 172, 224, 0.95);
+  background-color: rgba(103, 157, 248, 0.95);
   border-bottom: 1px solid rgb(230, 230, 230);
 }
 
@@ -183,11 +183,11 @@ a {
   width: 100%;
   height: 100%;
   color: rgb(230, 230, 230);
-  background-color: rgba(233, 141, 88, 0.95);
+  background-color: rgba(165, 176, 118, 0.95);
 }
 
 #routesBtn{
-  background-color: rgba(165, 176, 118, 0.95);
+  background-color: rgba(233, 141, 88, 0.95);
 
 }
 
@@ -196,7 +196,7 @@ a {
 }
 
 #visitarweb {
-  color: rgb(66, 150, 206);
+  color: rgb(233, 141, 88);
 }
 
 .btn {
@@ -287,4 +287,12 @@ a {
   position: absolute;
   display: block;
   z-index: 5;
+}
+h2{
+  color: #679DF8
+}
+
+audio{
+  color: #679DF8;
+  width: 100%;
 }

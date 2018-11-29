@@ -3,9 +3,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable consistent-return */
 const express = require('express');
-const passport = require('passport');
-const axios = require('axios');
-
 const router = express.Router();
 const Place = require('../models/Place');
 
@@ -38,6 +35,18 @@ router.post("/", (req, res, next) => {
       .catch(errGetAPI => {
         console.log(errGetAPI);
       });
+});
+
+router.get("/locations/:informacion", (req, res, next) => {
+
+  Place.find({ $or: [ { type:req.params.informacion}, { type:req.params.iglesia },{ type:req.params.monumento}, { type:req.params.museo }] })
+    .then(response => {
+      // res.render("index", {response: JSON.stringify(response)})
+      res.json({response: response})
+      })
+    .catch(errGetAPI => {
+      console.log(errGetAPI);
+    });
 });
 
 router.get('/addplace', (req, res, next) => {

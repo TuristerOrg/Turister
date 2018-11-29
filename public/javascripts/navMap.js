@@ -32,219 +32,236 @@ document.addEventListener(
         zoom: 16,
         styles: [
           {
-            elementType: 'geometry',
-            stylers: [
+            "elementType": "geometry",
+            "stylers": [
               {
-                color: '#ebe3cd',
-              },
-            ],
+                "color": "#ebe3cd"
+              }
+            ]
           },
           {
-            elementType: 'labels.text.fill',
-            stylers: [
+            "elementType": "labels.text.fill",
+            "stylers": [
               {
-                color: '#523735',
-              },
-            ],
+                "color": "#523735"
+              }
+            ]
           },
           {
-            elementType: 'labels.text.stroke',
-            stylers: [
+            "elementType": "labels.text.stroke",
+            "stylers": [
               {
-                color: '#f5f1e6',
-              },
-            ],
+                "color": "#f5f1e6"
+              }
+            ]
           },
           {
-            featureType: 'administrative',
-            elementType: 'geometry.stroke',
-            stylers: [
+            "featureType": "administrative",
+            "elementType": "geometry.stroke",
+            "stylers": [
               {
-                color: '#c9b2a6',
-              },
-            ],
+                "color": "#c9b2a6"
+              }
+            ]
           },
           {
-            featureType: 'administrative.land_parcel',
-            elementType: 'geometry.stroke',
-            stylers: [
+            "featureType": "administrative.land_parcel",
+            "elementType": "geometry.stroke",
+            "stylers": [
               {
-                color: '#dcd2be',
-              },
-            ],
+                "color": "#dcd2be"
+              }
+            ]
           },
           {
-            featureType: 'administrative.land_parcel',
-            elementType: 'labels.text.fill',
-            stylers: [
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels.text.fill",
+            "stylers": [
               {
-                color: '#ae9e90',
-              },
-            ],
+                "color": "#ae9e90"
+              }
+            ]
           },
           {
-            featureType: 'landscape.natural',
-            elementType: 'geometry',
-            stylers: [
+            "featureType": "landscape.natural",
+            "elementType": "geometry",
+            "stylers": [
               {
-                color: '#dfd2ae',
-              },
-            ],
+                "color": "#dfd2ae"
+              }
+            ]
           },
           {
-            featureType: 'poi',
-            elementType: 'geometry',
-            stylers: [
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [
               {
-                color: '#dfd2ae',
-              },
-            ],
+                "color": "#dfd2ae"
+              }
+            ]
           },
           {
-            featureType: 'poi',
-            elementType: 'labels.text.fill',
-            stylers: [
+            "featureType": "poi",
+            "elementType": "labels.text.fill",
+            "stylers": [
               {
-                color: '#93817c',
-              },
-            ],
+                "color": "#93817c"
+              }
+            ]
           },
           {
-            featureType: 'poi.park',
-            elementType: 'geometry.fill',
-            stylers: [
+            "featureType": "poi.business",
+            "stylers": [
               {
-                color: '#a5b076',
-              },
-            ],
+                "visibility": "off"
+              }
+            ]
           },
           {
-            featureType: 'poi.park',
-            elementType: 'labels.text.fill',
-            stylers: [
+            "featureType": "poi.park",
+            "elementType": "geometry.fill",
+            "stylers": [
               {
-                color: '#447530',
-              },
-            ],
+                "color": "#a5b076"
+              }
+            ]
           },
           {
-            featureType: 'road',
-            elementType: 'geometry',
-            stylers: [
+            "featureType": "poi.park",
+            "elementType": "labels.text",
+            "stylers": [
               {
-                color: '#f5f1e6',
-              },
-            ],
+                "visibility": "off"
+              }
+            ]
           },
           {
-            featureType: 'road.arterial',
-            elementType: 'geometry',
-            stylers: [
+            "featureType": "poi.park",
+            "elementType": "labels.text.fill",
+            "stylers": [
               {
-                color: '#fdfcf8',
-              },
-            ],
+                "color": "#447530"
+              }
+            ]
           },
           {
-            featureType: 'road.highway',
-            elementType: 'geometry',
-            stylers: [
+            "featureType": "road",
+            "elementType": "geometry",
+            "stylers": [
               {
-                color: '#f8c967',
-              },
-            ],
+                "color": "#f5f1e6"
+              }
+            ]
           },
           {
-            featureType: 'road.highway',
-            elementType: 'geometry.stroke',
-            stylers: [
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [
               {
-                color: '#e9bc62',
-              },
-            ],
+                "color": "#fdfcf8"
+              }
+            ]
           },
           {
-            featureType: 'road.highway.controlled_access',
-            elementType: 'geometry',
-            stylers: [
+            "featureType": "road.highway",
+            "elementType": "geometry",
+            "stylers": [
               {
-                color: '#e98d58',
-              },
-            ],
+                "color": "#f8c967"
+              }
+            ]
           },
           {
-            featureType: 'road.highway.controlled_access',
-            elementType: 'geometry.stroke',
-            stylers: [
+            "featureType": "road.highway",
+            "elementType": "geometry.stroke",
+            "stylers": [
               {
-                color: '#db8555',
-              },
-            ],
+                "color": "#e9bc62"
+              }
+            ]
           },
           {
-            featureType: 'road.local',
-            elementType: 'labels.text.fill',
-            stylers: [
+            "featureType": "road.highway.controlled_access",
+            "elementType": "geometry",
+            "stylers": [
               {
-                color: '#806b63',
-              },
-            ],
+                "color": "#e98d58"
+              }
+            ]
           },
           {
-            featureType: 'transit.line',
-            elementType: 'geometry',
-            stylers: [
+            "featureType": "road.highway.controlled_access",
+            "elementType": "geometry.stroke",
+            "stylers": [
               {
-                color: '#dfd2ae',
-              },
-            ],
+                "color": "#db8555"
+              }
+            ]
           },
           {
-            featureType: 'transit.line',
-            elementType: 'labels.text.fill',
-            stylers: [
+            "featureType": "road.local",
+            "elementType": "labels.text.fill",
+            "stylers": [
               {
-                color: '#8f7d77',
-              },
-            ],
+                "color": "#806b63"
+              }
+            ]
           },
           {
-            featureType: 'transit.line',
-            elementType: 'labels.text.stroke',
-            stylers: [
+            "featureType": "transit.line",
+            "elementType": "geometry",
+            "stylers": [
               {
-                color: '#ebe3cd',
-              },
-            ],
+                "color": "#dfd2ae"
+              }
+            ]
           },
           {
-            featureType: 'transit.station',
-            elementType: 'geometry',
-            stylers: [
+            "featureType": "transit.line",
+            "elementType": "labels.text.fill",
+            "stylers": [
               {
-                color: '#dfd2ae',
-              },
-            ],
+                "color": "#8f7d77"
+              }
+            ]
           },
           {
-            featureType: 'water',
-            elementType: 'geometry.fill',
-            stylers: [
+            "featureType": "transit.line",
+            "elementType": "labels.text.stroke",
+            "stylers": [
               {
-                color: '#b9d3c2',
-              },
-            ],
+                "color": "#ebe3cd"
+              }
+            ]
           },
           {
-            featureType: 'water',
-            elementType: 'labels.text.fill',
-            stylers: [
+            "featureType": "transit.station",
+            "elementType": "geometry",
+            "stylers": [
               {
-                color: '#92998d',
-              },
-            ],
+                "color": "#dfd2ae"
+              }
+            ]
           },
-        ],
+          {
+            "featureType": "water",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#b9d3c2"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#92998d"
+              }
+            ]
+          }
+        ]
       });
 
       directionsDisplay.setMap(map);
@@ -352,16 +369,16 @@ document.addEventListener(
               console.log(item);
               if (google.maps.geometry.spherical.computeDistanceBetween(myPos, itemPos) <= radius) {
                 infowindow.setContent(
-                  `<div>
-            <h2>${item.name}</h2>
-            <div>
-              <p>${item.description}</p>
-              <a id="visitarweb" href="${item.web}" target='_blank'>Visitar web</a>
-              <audio controls>
-                    <source src="${item.audio}" type="audio/mpeg">
-                  </audio>"
-            </div>
-          </div>`,
+                  `<div id="infowindow">
+                     <h2>${item.name}</h2>
+                     <div>
+                        <p>${item.description}</p>
+                        <a id="visitarweb" href="${item.web}" target='_blank'>Visitar web</a><br><br>
+                        <audio controls>
+                         <source src="${item.audio}" type="audio/mpeg">
+                        </audio>"
+                       </div>
+                  </div>`
                 );
 
                 // infoWindow.setOptions({maxWidt: 200})
@@ -371,18 +388,16 @@ document.addEventListener(
               google.maps.event.addListener(marker, 'click', (function (marker) {
                 return function () {
                   infowindow.setContent(
-                    `<div>
-                <h2>${item.name}</h2>
-                <div>
-                  <p>${item.description}</p>
-                  <a id="visitarweb" href="${
-                item.web
-                }" target='_blank'>Visitar web</a>
-                  <audio controls>
-                    <source src="${item.audio}" type="audio/mpeg">
-                  </audio>"
-                </div>
-              </div>`,
+                    `<div id="infowindow">
+                    <h2>${item.name}</h2>
+                    <div>
+                       <p>${item.description}</p>
+                       <a id="visitarweb" href="${item.web}" target='_blank'>Visitar web</a><br><br>
+                       <audio controls>
+                        <source src="${item.audio}" type="audio/mpeg">
+                       </audio>"
+                      </div>
+                 </div>`
                   );
 
                   // infoWindow.setOptions({maxWidt: 200})

@@ -1,0 +1,4 @@
+router.get("locations/:locationType", function (req, res){
+  //assume ["monumentos", "museos"]
+  Locations.find({$in})
+})
