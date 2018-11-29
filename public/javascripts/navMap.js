@@ -2,24 +2,24 @@
 /* eslint-disable no-use-before-define */
 
 document.addEventListener(
-  "DOMContentLoaded",
+  'DOMContentLoaded',
   () => {
     const radius = 80;
     let pos;
     let map;
     let infoWindow;
     function initMap() {
-      var directionsDisplay = new google.maps.DirectionsRenderer();
-      var directionsService = new google.maps.DirectionsService();
+      const directionsDisplay = new google.maps.DirectionsRenderer();
+      const directionsService = new google.maps.DirectionsService();
 
-      map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 16
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
       });
       directionsDisplay.setMap(map);
 
       calculateAndDisplayRoute(directionsService, directionsDisplay);
 
-   
+
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         directionsService.route(
           {
@@ -29,43 +29,43 @@ document.addEventListener(
               {
                 location: new google.maps.LatLng(
                   40.415547923977506,
-                  -3.713669638684312
+                  -3.713669638684312,
                 ),
-                stopover: true
+                stopover: true,
               },
               {
                 location: new google.maps.LatLng(
                   40.42425096551599,
-                  -3.716531855540272
+                  -3.716531855540272,
                 ),
-                stopover: true
+                stopover: true,
               },
               {
                 location: new google.maps.LatLng(
                   40.41974735763767,
-                  -3.7061346665078845
+                  -3.7061346665078845,
                 ),
-                stopover: true
-              }
+                stopover: true,
+              },
             ],
-            travelMode: google.maps.TravelMode["WALKING"]
+            travelMode: google.maps.TravelMode.WALKING,
           },
-          function(response, status) {
-            if (status == "OK") {
+          (response, status) => {
+            if (status == 'OK') {
               directionsDisplay.setDirections(response);
             } else {
-              window.alert("Directions request failed due to " + status);
+              window.alert(`Directions request failed due to ${status}`);
             }
-          }
+          },
         );
       }
 
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-          position => {
+          (position) => {
             pos = {
               lat: position.coords.latitude,
-              lng: position.coords.longitude
+              lng: position.coords.longitude,
             };
             const marker = new google.maps.Marker({
               map,
@@ -74,14 +74,14 @@ document.addEventListener(
               position: pos,
               icon: {
                 path: google.maps.SymbolPath.CIRCLE,
-                scale: 8
-              }
+                scale: 8,
+              },
             });
             const circle = new google.maps.Circle({
-              strokeColor: "#FF0000",
+              strokeColor: '#FF0000',
               strokeOpacity: 0.8,
               strokeWeight: 2,
-              fillColor: "#FF0000",
+              fillColor: '#FF0000',
               fillOpacity: 0.35,
               map,
               center: pos,
@@ -91,7 +91,7 @@ document.addEventListener(
           },
           () => {
             handleLocationError(true, infoWindow, map.getCenter());
-          }
+          },
         );
       } else {
         handleLocationError(false, infoWindow, map.getCenter());
@@ -140,8 +140,8 @@ document.addEventListener(
                 <div>
                   <p>${item.description}</p>
                   <a id="visitarweb" href="${
-                    item.web
-                  }" target='_blank'>Visitar web</a>
+                item.web
+                }" target='_blank'>Visitar web</a>
                   <audio controls>
                     <source src="${item.audio}" type="audio/mpeg">
                   </audio>"
@@ -165,13 +165,13 @@ document.addEventListener(
       infoWindow.setPosition(pos);
       infoWindow.setContent(
         browserHasGeolocation
-          ? "Error: The Geolocation service failed."
-          : "Error: Your browser doesn't support geolocation."
+          ? 'Error: The Geolocation service failed.'
+          : "Error: Your browser doesn't support geolocation.",
       );
       infoWindow.open(map);
     }
 
     initMap();
   },
-  false
+  false,
 );
