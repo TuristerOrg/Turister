@@ -4,8 +4,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Merriweather", serif;
-  background: linear-gradient(to bottom, #0c0c0c, #505050); }
+  font-family: 'Noto Sans SC', sans-serif;
+  background-color: #7bace0; }
 
 nav {
   margin: 0; }
@@ -17,16 +17,18 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, #505050, #0c0c0c); }
+  background-color: #7bace0;
+  border-bottom: 2px solid #E98D58; }
 
 h1 {
   margin: 0;
   font-size: 30px;
+  font-weight: 600;
   color: #e6e6e6; }
 
 nav img {
-  width: 40px;
-  height: 25px; }
+  width: 35px;
+  height: 35px; }
 
 #menu-container {
   z-index: 1;
@@ -39,9 +41,10 @@ nav img {
   float: right;
   justify-content: center;
   align-items: center;
-  width: 63vw;
+  width: 50.1vw;
   height: 10vh;
-  background: linear-gradient(to bottom, rgba(80, 80, 80, 0.95), rgba(40, 40, 40, 0.95)); }
+  background-color: rgba(123, 172, 224, 0.95);
+  border-bottom: 1px solid #e6e6e6; }
 
 a {
   text-decoration: none;
@@ -125,13 +128,13 @@ a {
 
 #filter-container {
   display: none;
-  padding-left: 6vw;
-  color: #e6e6e6;
-  z-index: 1;
-  width: 45vw;
   position: absolute;
-  height: 30vh;
-  background: linear-gradient(to bottom, rgba(80, 80, 80, 0.95), rgba(40, 40, 40, 0.95)); }
+  justify-content: center;
+  align-items: center;
+  width: 50.1vw;
+  height: 10vh;
+  background-color: rgba(123, 172, 224, 0.95);
+  border-bottom: 1px solid #e6e6e6; }
 
 #filter-container form {
   display: flex;
@@ -181,6 +184,9 @@ a {
   background: #c80e33;
   box-shadow: 0 5px #69071b;
   color: #fff; }
+
+.btn-filtro {
+  width: 80%; }
 
 .adminPanel {
   height: 90vh;

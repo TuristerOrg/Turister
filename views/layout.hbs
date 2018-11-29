@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <script src="/javascripts/geolocalize.js"></script>
 </head>
@@ -16,26 +16,26 @@
   <nav>
     <div id="nav-bar">
       <img id="filter-btn" src="/images/arrow.png" alt="filter-icon">
-      <h1>Turister</h1>
-      <img id="menu-btn" src="/images/menu-icon-2.png" alt="menu-icon">
+      <h1>Turister  <img src="/images/compass.png" alt="menu-icon"></h1>
+      <img id="menu-btn" src="/images/menu-button.png" alt="menu-icon">
     </div>
 
     <div id="menu-container">
       <div class="menu-box"><a href="/">Home</a></div>
       <div class="menu-box"><a href="/routes">Ver Rutas</a></div>
-      <div class="menu-box"><a href="/addplace">Añadir Lugar de Interés</a></div>
-      <div class="menu-box"><a href="/admin/controlPanel">Añadir Ruta(Admin panel)</a></div>
+      <div class="menu-box"><a href="/addplace">Añadir Lugar</a></div>
+      {{!-- <div class="menu-box"><a href="/admin/controlPanel">Añadir Ruta(Admin panel)</a></div> --}}
       <div class="menu-box"><a href="/auth/login">Log in</a></div>
       <div class="menu-box"><a href="/auth/signup">Sign up</a></div>
     </div>
 
     <div id="filter-container">
       <form action="/" method="POST" id="form-filter">
-      <label><input name="monumento" type="checkbox" id="monumento" value="monumento">Monumentos</label>
-      <label><input name="museo" type="checkbox" id="museo" value="museo">Museos</label>
-      <label><input name="informacion" type="checkbox" id="informacion" value="informacion">Información</label>
-      <label><input name="iglesia" type="checkbox" id="iglesia" value="iglesia">Iglesias</label>
-      <button type="submit" >Filtra</button>
+        <label><input name="monumento" type="checkbox" id="monumento" value="monumento">Monumentos</label>
+        <label><input name="museo" type="checkbox" id="museo" value="museo">Museos</label>
+        <label><input name="informacion" type="checkbox" id="informacion" value="informacion">Información</label>
+        <label><input name="iglesia" type="checkbox" id="iglesia" value="iglesia">Iglesias</label>
+        <button class="btn btn-filtro" type="submit">Filtrar</button>
       </form>
     </div>
 
