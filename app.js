@@ -72,6 +72,7 @@ app.use(session({
 app.use(flash());
 require('./passport')(app);
 
+hbs.registerPartials(`${__dirname}/views`);
 
 const index = require('./routes/index');
 
