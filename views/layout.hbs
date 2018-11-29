@@ -13,34 +13,7 @@
 
 <body>
 
-  <nav>
-    <div id="nav-bar">
-      <img id="filter-btn" src="/images/arrow.png" alt="filter-icon">
-      <h1>Turister <img src="/images/compass.png" alt="menu-icon"></h1>
-      <img id="menu-btn" src="/images/menu-button.png" alt="menu-icon">
-    </div>
-
-    <div id="menu-container">
-      <div class="menu-box"><a href="/">Home</a></div>
-      <div class="menu-box"><a href="/addplace">Añadir Lugar</a></div>
-      <div class="menu-box"><a href="/auth/login">Log in</a></div>
-      <div class="menu-box"><a href="/auth/signup">Sign up</a></div>
-    </div>
-
-    <div id="filter-container">
-      <div id="form-filter-container">
-        <form action="/" method="POST" id="form-filter">
-          <div class="filter-box"><label><input name="monumento" type="checkbox" id="monumento" value="monumento">Monumentos</label></div>
-          <div class="filter-box"><label><input name="museo" type="checkbox" id="museo" value="museo">Museos</label></div>
-          <div class="filter-box"><label><input name="informacion" type="checkbox" id="informacion" value="informacion">Información</label></div>
-          <div class="filter-box"><label><input name="iglesia" type="checkbox" id="iglesia" value="iglesia">Iglesias</label></div>
-          <div class="filter-box-btn"><button class="btn-filtro" type="submit">Filtrar</button></div>
-        </form>
-        <div class="filter-box-btn"><button id="routesBtn" class="btn-filtro">Rutas</button></div>
-      </div>
-    </div>
-  </nav>
-
+  {{> navbar}}
   {{{body}}}
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/javascripts/events.js"></script>
