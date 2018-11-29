@@ -296,7 +296,7 @@ document.addEventListener(
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            const marker = new google.maps.Marker({
+            const markerID = new google.maps.Marker({
               map: map,
               draggable: true,
               animation: google.maps.Animation.DROP,

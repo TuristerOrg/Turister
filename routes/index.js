@@ -18,13 +18,9 @@ router.get("/", (req, res, next) => {
       .catch(errGetAPI => {
         console.log(errGetAPI);
       });
-  // })
 });
 
 router.post("/", (req, res, next) => {
-  console.log(req.body.iglesia)
-
-
 
     Place.find({ $or: [ { type:req.body.informacion}, { type:req.body.iglesia },{ type:req.body.monumento}, { type:req.body.museo }] })
       .then(response => {
