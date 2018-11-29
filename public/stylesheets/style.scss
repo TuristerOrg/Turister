@@ -1,3 +1,6 @@
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -5,8 +8,10 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Merriweather", serif;
-  background: linear-gradient(to bottom, rgb(12, 12, 12), rgb(80, 80, 80));
+  font-family: 'Noto Sans SC', sans-serif;
+  background-color: #7bace0;
+  
+
 }
 nav {
   margin: 0;
@@ -19,18 +24,20 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, rgb(80, 80, 80), rgb(12, 12, 12));
+  background-color: #7bace0;
+  border-bottom: 2px solid #E98D58;
 }
 
 h1 {
   margin: 0;
   font-size: 30px;
+  font-weight: 600;
   color: rgb(230, 230, 230);
 }
 
 nav img {
-  width: 40px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
 }
 
 #menu-container {
@@ -45,14 +52,10 @@ nav img {
   float: right;
   justify-content: center;
   align-items: center;
-  width: 63vw;
+  width: 50.1vw;
   height: 10vh;
-  // padding-right: 25px;
-  background: linear-gradient(
-    to bottom,
-    rgba(80, 80, 80, 0.95),
-    rgba(40, 40, 40, 0.95)
-  );
+  background-color: rgba(123, 172, 224, 0.95);
+  border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 a {
@@ -148,17 +151,13 @@ a {
 }
 #filter-container {
   display: none;
-  padding-left: 6vw;
-  color: rgb(230, 230, 230);
-  z-index: 1;
-  width: 45vw;
   position: absolute;
-  height: 30vh;
-  background: linear-gradient(
-    to bottom,
-    rgba(80, 80, 80, 0.95),
-    rgba(40, 40, 40, 0.95)
-  );
+  justify-content: center;
+  align-items: center;
+  width: 50.1vw;
+  height: 10vh;
+  background-color: rgba(123, 172, 224, 0.95);
+  border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 #filter-container form {
@@ -218,7 +217,9 @@ a {
   box-shadow: 0 5px #69071b;
   color: #fff;
 }
-
+.btn-filtro{
+  width: 80%;
+}
 .adminPanel {
   height: 90vh;
   padding-left: 20px;
