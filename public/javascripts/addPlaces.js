@@ -10,7 +10,7 @@ document.addEventListener(
       document.getElementById('lng-pos').value = latlng.lng;
     };
 
-    let marker;
+    let marker2;
 
     mapAddPlaces.addListener('click', (e) => {
       const clickPos = {
@@ -18,7 +18,7 @@ document.addEventListener(
         lng:e.latLng.lng(),
       };
       console.log(clickPos);
-      marker.setPosition(clickPos);
+      marker2.setPosition(clickPos);
       setPosOnForm(clickPos);
     });
 
